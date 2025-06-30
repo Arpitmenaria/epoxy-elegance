@@ -1,0 +1,128 @@
+.theme-page-container {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 100vw;       /* ✅ Prevent stretching wider than screen */
+  overflow-x: hidden;     /* ✅ No horizontal scroll */
+}
+
+/* Sidebar Styles */
+.theme-sidebar {
+  width: 250px;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.theme-sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.theme-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 5px 0;
+  max-width: 100%; /* ✅ prevent overflow */
+}
+
+
+.theme-list li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.theme-list li:hover,
+.theme-list li.active {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Product Section */
+.theme-products {
+  flex: 1;
+  padding: 20px;
+}
+
+.theme-products h2 {
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .theme-page-container {
+    flex-direction: column;
+    padding: 10px;
+    overflow-x: hidden;
+  }
+
+  .theme-sidebar {
+    width: 100%;
+    padding: 10px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    overflow-x: auto;
+  }
+
+  .theme-sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .theme-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 5px 0;
+    max-width: 100%;
+  }
+
+  .theme-list li {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .theme-products {
+    padding: 10px;
+  }
+
+  .theme-products h2 {
+    padding-left: 0;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* ✅ Better fit for images */
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .product-grid .product-card {
+    font-size: 14px;
+  }
+}

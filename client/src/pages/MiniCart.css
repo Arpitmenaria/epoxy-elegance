@@ -1,0 +1,71 @@
+/* MiniCart.css */
+.mini-cart {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  padding: 15px;
+  z-index: 9999;
+  animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mini-cart h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.mini-cart-items {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.mini-cart-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mini-cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.view-cart-btn {
+  width: 100%;
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}

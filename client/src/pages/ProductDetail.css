@@ -1,0 +1,190 @@
+/* ProductDetail.css */
+
+.detail-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.detail-image-section {
+  flex: 1 1 400px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.05);
+  cursor: zoom-in;
+}
+
+.thumbnail-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  border-color: #007BFF;
+}
+
+.detail-info {
+  flex: 1 1 450px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-info h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.size-selector label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.size-selector select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  min-width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.size-selector select:hover,
+.size-selector select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #007BFF;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  flex: 1 1 140px;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.collapsible-block {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #007BFF;
+}
+
+.collapsible-header h4 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collapsible-content {
+  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Scrollbar for thumbnails */
+.thumbnail-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thumbnail-row::-webkit-scrollbar-thumb {
+  background-color: #007BFF;
+  border-radius: 3px;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .detail-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .detail-image-section,
+  .detail-info {
+    min-width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    flex: 1 1 auto;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+

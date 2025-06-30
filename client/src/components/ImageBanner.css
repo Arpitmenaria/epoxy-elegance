@@ -1,0 +1,27 @@
+.image-banner {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.image-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 0; /* optional: remove if you want rounded corners */
+}
+
+/* Optional: add height control for desktop if needed */
+@media screen and (min-width: 1024px) {
+  .image-banner img {
+    max-height: 500px;
+  }
+}
+
+/* Mobile-friendly adjustments */
+@media screen and (max-width: 768px) {
+  .image-banner img {
+    max-height: 250px;
+  }
+}

@@ -1,0 +1,84 @@
+.customization-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.customization-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.customization-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.customization-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.customization-form-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.customization-form-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.custom-form input,
+.custom-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.custom-form button {
+  padding: 0.8rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.custom-form button:hover {
+  background: #555;
+}
+
+.thank-you {
+  text-align: center;
+  font-size: 1.2rem;
+  color: green;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .customization-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .custom-form input,
+  .custom-form textarea {
+    font-size: 0.95rem;
+  }
+}
