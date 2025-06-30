@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ImageViewer from "react-simple-image-viewer"; // import here
 import { useCart } from "../context/CartContext";
 import "./ProductDetail.css";
+
+// ✅ Import Lightbox and styles
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -11,9 +14,9 @@ function ProductDetail() {
   const [mainImage, setMainImage] = useState("");
   const { addToCart } = useCart();
 
-  // Image viewer state
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // ✅ Lightbox State
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const [showDescription, setShowDescription] = useState(false);
   const [showPolicy, setShowPolicy] = useState(false);
@@ -39,15 +42,9 @@ function ProductDetail() {
     alert("🛒 Added to cart!");
   };
 
-  // Open image viewer modal
-  const openImageViewer = (index) => {
-    setCurrentImageIndex(index);
-    setIsViewerOpen(true);
-  };
-
-  // Close image viewer modal
-  const closeImageViewer = () => {
-    setIsViewerOpen(false);
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setIsLightboxOpen(true);
   };
 
   if (!product) return <p>Loading...</p>;
@@ -55,13 +52,12 @@ function ProductDetail() {
   return (
     <div className="detail-container">
       <div className="detail-image-section">
-        {/* Main image clickable to open viewer */}
         <img
           src={mainImage}
           alt={product.title}
           className="main-image"
-          onClick={() => openImageViewer(product.images.indexOf(mainImage))}
-          style={{ cursor: "pointer" }}
+          onClick={() => openLightbox(product.images.indexOf(mainImage))}
+          style={{ cursor: "zoom-in" }}
         />
         <div className="thumbnail-row">
           {product.images.map((img, i) => (
@@ -105,7 +101,6 @@ function ProductDetail() {
           <button onClick={handleBuyNow}>Buy Now</button>
         </div>
 
-        {/* Collapsible: Product Description */}
         <div className="collapsible-block">
           <div
             className="collapsible-header"
@@ -121,7 +116,6 @@ function ProductDetail() {
           )}
         </div>
 
-        {/* Collapsible: Shipping & Return Policy */}
         <div className="collapsible-block">
           <div
             className="collapsible-header"
@@ -143,17 +137,13 @@ function ProductDetail() {
         </div>
       </div>
 
-      {/* Image Viewer Modal */}
-      {isViewerOpen && (
-        <ImageViewer
-          src={product.images}
-          currentIndex={currentImageIndex}
-          disableScroll={false}
-          closeOnClickOutside={true}
-          onClose={closeImageViewer}
-          backgroundStyle={{
-            backgroundColor: "rgba(0,0,0,0.9)",
-          }}
+      {/* ✅ Lightbox */}
+      {isLightboxOpen && (
+        <Lightbox
+          open={isLightboxOpen}
+          close={() => setIsLightboxOpen(false)}
+          index={lightboxIndex}
+          slides={product.images.map((img) => ({ src: img }))}
         />
       )}
     </div>
