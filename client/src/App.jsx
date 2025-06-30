@@ -14,7 +14,7 @@ import MiniCart from './pages/MiniCart';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
 import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext';
-import 'react-image-lightbox/style.css';
+import "yet-another-react-lightbox/styles.css";
 import Customization from './pages/Customization';
 import WhatsAppIcon from './pages/WhatsAppIcon';
 import Payment from './pages/Payment';
