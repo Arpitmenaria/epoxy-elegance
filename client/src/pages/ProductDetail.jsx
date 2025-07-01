@@ -22,7 +22,7 @@ function ProductDetail() {
   const [showPolicy, setShowPolicy] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

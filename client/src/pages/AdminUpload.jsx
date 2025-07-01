@@ -28,7 +28,7 @@ export default function AdminUpload() {
   }, []);
 
   const fetchProducts = () => {
-    fetch("http://localhost:5000/api/products")
+    fetch("${import.meta.env.VITE_BACKEND_URL}/api/products")
       .then(res => res.json())
       .then(data => setProducts(data));
   };
@@ -79,8 +79,8 @@ export default function AdminUpload() {
     e.preventDefault();
     const method = editId ? "PUT" : "POST";
     const url = editId
-      ? `http://localhost:5000/api/products/${editId}`
-      : "http://localhost:5000/api/products";
+      ? `${import.meta.env.VITE_BACKEND_URL}/api/products/${editId}`
+      : "${import.meta.env.VITE_BACKEND_URL}/api/products";
 
     const res = await fetch(url, {
       method,
@@ -110,7 +110,7 @@ export default function AdminUpload() {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this product?")) return;
-    await fetch(`http://localhost:5000/api/products/${id}`, { method: "DELETE" });
+    await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/products/${id}`, { method: "DELETE" });
     setProducts(products.filter(p => p._id !== id));
   };
 

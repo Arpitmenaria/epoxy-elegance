@@ -12,11 +12,11 @@ function ProductListing() {
     let url = "";
 
     if (location.pathname.startsWith("/category/")) {
-      url = `http://localhost:5000/api/products?category=${type}`;
+      url = `${import.meta.env.VITE_BACKEND_URL}/api/products?category=${type}`;
     } else if (location.pathname.startsWith("/themes/")) {
-      url = `http://localhost:5000/api/products?theme=${type}`;
+      url = `${import.meta.env.VITE_BACKEND_URL}/api/products?theme=${type}`;
     } else {
-      url = "http://localhost:5000/api/products";
+      url = "${import.meta.env.VITE_BACKEND_URL}/api/products";
     }
 
     fetch(url)

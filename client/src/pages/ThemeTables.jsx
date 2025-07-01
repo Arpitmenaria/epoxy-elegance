@@ -14,7 +14,7 @@ export default function ThemeTables() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products?theme=${selectedTheme}`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/products?theme=${selectedTheme}`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error fetching theme products", err));
