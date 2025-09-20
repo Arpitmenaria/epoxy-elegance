@@ -11,7 +11,7 @@ export default function Payment() {
   const handlePayment = async () => {
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/api/payment/create-order", {
+    const res = await fetch("https://epoxy-elegance.onrender.com/api/payment/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount }),
@@ -36,7 +36,7 @@ export default function Payment() {
         alert("✅ Payment Successful!");
 
         // ✅ Call backend to send confirmation email with Razorpay order ID
-        await fetch("http://localhost:5000/api/orders/send-confirmation", {
+        await fetch("https://epoxy-elegance.onrender.com/api/orders/send-confirmation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

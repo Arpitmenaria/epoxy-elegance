@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="logo" onClick={closeMenu}>
-  <h1>Epoxy Elegance</h1>
+  <h1>Epoxy Furnish</h1>
 </Link>
 
 
