@@ -34,7 +34,7 @@ function Home() {
       <section className="videos-section">
         <video
           className="home-video"
-          src="https://res.cloudinary.com/your-cloudinary/video/upload/v1234567890/epoxy_table1.mp4"
+          src="https://res.cloudinary.com/dbazlbkfj/video/upload/v1758393735/WhatsApp_Video_2025-09-21_at_00.11.32_26ffe63b_ymdca7.mp4"
           controls
           muted
           loop
@@ -42,7 +42,7 @@ function Home() {
         />
         <video
           className="home-video"
-          src="https://res.cloudinary.com/your-cloudinary/video/upload/v1234567890/epoxy_table2.mp4"
+          src="https://res.cloudinary.com/dbazlbkfj/video/upload/v1758393457/WhatsApp_Video_2025-09-21_at_00.01.35_94e87538_lkkdag.mp4"
           autoPlay
           muted
           loop
