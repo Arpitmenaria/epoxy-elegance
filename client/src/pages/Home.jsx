@@ -35,7 +35,7 @@ function Home() {
         <video
           className="home-video"
           src="https://res.cloudinary.com/dbazlbkfj/video/upload/v1758393735/WhatsApp_Video_2025-09-21_at_00.11.32_26ffe63b_ymdca7.mp4"
-          controls
+          autoPlay
           muted
           loop
           playsInline
