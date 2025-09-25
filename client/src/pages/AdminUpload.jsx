@@ -28,7 +28,7 @@ export default function AdminUpload() {
   }, []);
 
   const fetchProducts = () => {
-    fetch("${import.meta.env.VITE_BACKEND_URL}/api/products")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/products`)
       .then(res => res.json())
       .then(data => setProducts(data));
   };
@@ -80,7 +80,7 @@ export default function AdminUpload() {
     const method = editId ? "PUT" : "POST";
     const url = editId
       ? `${import.meta.env.VITE_BACKEND_URL}/api/products/${editId}`
-      : "${import.meta.env.VITE_BACKEND_URL}/api/products";
+      : `${import.meta.env.VITE_BACKEND_URL}/api/products`;
 
     const res = await fetch(url, {
       method,
