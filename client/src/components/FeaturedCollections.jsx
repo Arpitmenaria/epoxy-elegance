@@ -4,7 +4,7 @@ import './FeaturedCollections.css';
 const collections = [
   {
     title: 'Wall Arts',
-    image: 'https://res.cloudinary.com/dbazlbkfj/image/upload/v1749833360/ChatGPT_Image_Jun_13_2025_01_57_27_PM_nxsznh.png',
+    image: 'https://res.cloudinary.com/dbazlbkfj/image/upload/v1749833376/ChatGPT_Image_Jun_13_2025_02_47_25_PM_mhvwbz.png',
     link: '/category/wall-art',
   },
   {
